@@ -1,0 +1,33 @@
+<h1>Profil de <%= current_user.email %></h1>
+<%= link_to "Modifier votre mot de passe", "/edit" %>
+<p>
+    <%= link_to "Jouer", "/game" %>
+</p>
+<p>
+    Parties jouées : <%= @games.count %>
+</p>
+<p>
+    Parties gagnées : <%= @wins.count %>
+</p>
+<% @games.each_with_index do |g, index|%>
+  <ul>
+    <h2>
+        <div class="third">
+            <li> Partie #<%= index+1 %>
+                <p>
+                    Créateur de la partie : <%= g.creator.email %>
+                </p>
+                <p>
+                    Adversaire : <%= g.opponent.email %>
+                </p>
+                <p>
+                    <% if g.winner_id %>
+                        Gagnant : <%= g.winner.email %>
+                    <% else %>
+                        Tour de <%= g.player_turn.email %>
+                    <% end %>
+                </p>
+        </div>
+    </h2>
+  </ul>
+<% end %>

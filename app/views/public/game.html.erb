@@ -1,0 +1,9 @@
+<%= javascript_pack_tag 'application','jquery', 'loop', 'tictactoc', 'data-turbolinks-track': 'reload' %>
+<p>
+    <%= link_to "Retour au profil", "/" %>
+</p>
+<p>
+    Bon TicTacToe <%= current_user.email %>!
+</p>
+<canvas id="exercice" width="400" height="200" style="border:1px solid #000000;"></canvas>
+<div id="message"></div>

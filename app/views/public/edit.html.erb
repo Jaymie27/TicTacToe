@@ -1,0 +1,5 @@
+<%= form_with model: current_user, url: "/", method: :patch do |form| %>
+    <%= form.label :password, "Nouveau mot de passe :" %>
+    <%= form.password_field :password %>
+    <%= form.submit "Modifier" %>
+<% end %>
